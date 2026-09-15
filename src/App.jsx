@@ -16,7 +16,7 @@ function getRandomUlam(list, excludeId) {
 function App() {
   const [selectedFilters, setSelectedFilters] = useState({});
   const [generatedUlam, setGeneratedUlam] = useState(null);
-  const [favoritess, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const filterOptions = getFilterOptions(ulams);
   const matchingUlams = filterUlams(ulams, selectedFilters);
@@ -30,7 +30,13 @@ function App() {
 
   const handleResetFilters = () => {
     setSelectedFilters({});
+    setGeneratedUlam(null)
   };
+
+  const handleFilterChange = (newFilters) => {
+    setSelectedFilters(newFilters)
+    setGeneratedUlam(null)
+  }
 
   const handleToggleFavorite = (id) => {
     setFavorites((prev) =>
@@ -45,7 +51,7 @@ function App() {
       <FilterPanel
         options={filterOptions}
         selectedFilters={selectedFilters}
-        onChange={setSelectedFilters}
+        onChange={handleFilterChange}
       />
 
       <button
@@ -79,12 +85,36 @@ function App() {
       )}
 
       {!hasNoMatches && generatedUlam && (
-        <UlamCard
-          ulam={generatedUlam}
-          isFavorite={favoritess.includes(generatedUlam.id)}
-          onToggleFavorite={handleToggleFavorite}
-        />
+        <div className="w-full flex justify-center">
+          <div className="w-[350px] max-w-full ring-4 ring-orange-300 rounded-2x1">
+            <UlamCard
+              ulam={generatedUlam}
+              isFavorite={favorites.includes(generatedUlam.id)}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          </div>
+        </div>
       )}
+
+      {!hasNoMatches && (
+        <div className="w-full max-w-6xl border-t border-orange-200 pt-2">
+          <p className="text-sm text-gray-500 text-center">All matching ulam</p>
+        </div>
+      )}
+
+      {!hasNoMatches && (
+        <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center">
+          {matchingUlams.map((ulam) => (
+            <UlamCard
+              key={ulam.id}
+              ulam={ulam}
+              isFavorite={favorites.includes(ulam.id)}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          ))}
+        </div>
+      )}
+
     </div>
   );
 }

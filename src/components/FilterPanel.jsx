@@ -1,5 +1,5 @@
 const FILTER_LABELS = {
-  meatType: 'Meat / Main Ingredient',
+  mainIngredient: 'Meat / Main Ingredient',
   cookingMethod: 'Cooking Method',
   sauceType: 'Sauce / Soup Type',
 }

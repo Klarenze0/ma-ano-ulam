@@ -45,7 +45,7 @@ function UlamCard({ ulam, isFavorite, onToggleFavorite }) {
         </div>
 
         <p className="text-sm text-gray-500">
-            {meatType && meatType !== 'None' ? meatType : 'Vegetables'} 
+            {meatType !== 'None' ? meatType : 'Vegetables'} 
             {cookingMethod ? ` ${cookingMethod}` : ''}
         </p>
 
