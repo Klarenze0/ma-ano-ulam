@@ -5,6 +5,7 @@ import { filterUlams } from "./utils/filterUlams";
 import UlamCard from "./components/UlamCard";
 import FilterPanel from "./components/FilterPanel";
 import EmptyState from "./components/EmptyState";
+import { useFavorites } from "./hooks/useFavorites";
 
 function getRandomUlam(list, excludeId) {
   const pool = excludeId ? list.filter((u) => u.id !== excludeId) : list;
@@ -16,7 +17,7 @@ function getRandomUlam(list, excludeId) {
 function App() {
   const [selectedFilters, setSelectedFilters] = useState({});
   const [generatedUlam, setGeneratedUlam] = useState(null);
-  const [favorites, setFavorites] = useState([]);
+  const { favorites, toggleFavorite, isFavorite } = useFavorites();
 
   const filterOptions = getFilterOptions(ulams);
   const matchingUlams = filterUlams(ulams, selectedFilters);
@@ -24,24 +25,18 @@ function App() {
 
   const handleGenerate = () => {
     const previousId = generatedUlam?.id;
-    const next = getRandomUlam(ulams, previousId);
+    const next = getRandomUlam(matchingUlams, previousId);
     setGeneratedUlam(next);
   };
 
   const handleResetFilters = () => {
     setSelectedFilters({});
-    setGeneratedUlam(null)
+    setGeneratedUlam(null);
   };
 
   const handleFilterChange = (newFilters) => {
-    setSelectedFilters(newFilters)
-    setGeneratedUlam(null)
-  }
-
-  const handleToggleFavorite = (id) => {
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id],
-    );
+    setSelectedFilters(newFilters);
+    setGeneratedUlam(null);
   };
 
   return (
@@ -89,8 +84,8 @@ function App() {
           <div className="w-[350px] max-w-full ring-4 ring-orange-300 rounded-2x1">
             <UlamCard
               ulam={generatedUlam}
-              isFavorite={favorites.includes(generatedUlam.id)}
-              onToggleFavorite={handleToggleFavorite}
+              isFavorite={isFavorite(generatedUlam.id)}
+              onToggleFavorite={toggleFavorite}
             />
           </div>
         </div>
@@ -108,13 +103,12 @@ function App() {
             <UlamCard
               key={ulam.id}
               ulam={ulam}
-              isFavorite={favorites.includes(ulam.id)}
-              onToggleFavorite={handleToggleFavorite}
+              isFavorite={isFavorite(ulam.id)}
+              onToggleFavorite={toggleFavorite}
             />
           ))}
         </div>
       )}
-
     </div>
   );
 }
