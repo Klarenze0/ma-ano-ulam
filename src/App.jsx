@@ -42,10 +42,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-orange-50 flex flex-col items-center justify-center gap-6 p-4">
+    <div className="min-h-screen bg-orange-50 flex flex-col items-center justify-start gap-6 p-4">
       <h1 className="text-3x1 font-bold text-orange-600">Ma, ano ulam?</h1>
 
-      <div className="flex gap-2 bg-white rounded-full p-1 shadow-sm">
+      <div className="sticky top-4 z-10 flex gap-2 bg-white rounded-full p-1 shadow-sm">
         <button
           onClick={() => setView("generator")}
           className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
