@@ -6,6 +6,7 @@ import UlamCard from "./components/UlamCard";
 import FilterPanel from "./components/FilterPanel";
 import EmptyState from "./components/EmptyState";
 import { useFavorites } from "./hooks/useFavorites";
+import FavoritesView from "./components/FavoritesView";
 
 function getRandomUlam(list, excludeId) {
   const pool = excludeId ? list.filter((u) => u.id !== excludeId) : list;
@@ -15,6 +16,7 @@ function getRandomUlam(list, excludeId) {
 }
 
 function App() {
+  const [view, setView] = useState("generator");
   const [selectedFilters, setSelectedFilters] = useState({});
   const [generatedUlam, setGeneratedUlam] = useState(null);
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
@@ -43,6 +45,38 @@ function App() {
     <div className="min-h-screen bg-orange-50 flex flex-col items-center justify-center gap-6 p-4">
       <h1 className="text-3x1 font-bold text-orange-600">Ma, ano ulam?</h1>
 
+      <div className="flex gap-2 bg-white rounded-full p-1 shadow-sm">
+        <button
+          onClick={() => setView("generator")}
+          className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+            view === "generator"
+              ? "bg-orange-500 text-white"
+              : "text-gray-600 hover:text-orange-600"
+          }`}
+        >
+          Generator
+        </button>
+        <button
+          onClick={() => setView("favorites")}
+          className={`px-4 py-2 rounded-full text-sm font-semibold transition ${
+            view === "favorites"
+              ? "bg-orange-500 text-white"
+              : "text-gray-600 hover:text-orange-600"
+          }`}
+        >
+          Favorites {favorites.length > 0 ? `(${favorites.length})` : ""}
+        </button>
+      </div>
+
+      {view === "favorites" ? (
+        <FavoritesView
+          ulams={ulams}
+          favorites={favorites}
+          isFavorite={isFavorite}
+          onToggleFavorite={toggleFavorite}
+        />
+      ) : (
+        <>
       <FilterPanel
         options={filterOptions}
         selectedFilters={selectedFilters}
@@ -109,6 +143,9 @@ function App() {
           ))}
         </div>
       )}
+      </>
+      )}
+      
     </div>
   );
 }
