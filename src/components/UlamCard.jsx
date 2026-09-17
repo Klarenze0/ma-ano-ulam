@@ -12,7 +12,7 @@ function UlamCard({ ulam, isFavorite, onToggleFavorite }) {
       <div className="h-48 bg-orange-100 flex items-center justify-center overflow-hidden">
         {image ? (
           <img
-            scr={image}
+            src={image}
             alt={name}
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -45,24 +45,18 @@ function UlamCard({ ulam, isFavorite, onToggleFavorite }) {
         </div>
 
         <p className="text-sm text-gray-500">
-            {meatType !== 'None' ? meatType : 'Vegetables'} 
-            {cookingMethod ? ` ${cookingMethod}` : ''}
+          {meatType !== "None" ? meatType : "Vegetables"}
+          {cookingMethod ? ` ${cookingMethod}` : ""}
         </p>
 
-        {sauceType && (
-            <p className="text-sm text-gray-500">
-                {sauceType}
-            </p>
-        )}
+        {sauceType && <p className="text-sm text-gray-500">{sauceType}</p>}
 
         {description && (
-            <p className="text-sm text-gray-600 pt-1">
-                {description}
-            </p>
+          <p className="text-sm text-gray-600 pt-1">{description}</p>
         )}
       </div>
     </div>
   );
 }
 
-export default UlamCard
+export default UlamCard;

@@ -9,7 +9,7 @@ export const ulams = [
     sauceType: "Sour Soup",
     hasSoup: true,
     description: "Chicken simmered in a sour tamarind broth with vegetables.",
-    image: "/images/sinampalukang-manok.jpg",
+    image: "/images/chicken/sinampalukang-manok.jpg",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const ulams = [
     sauceType: "Thick Sauce",
     hasSoup: false,
     description: "Chicken braised in soy sauce, vinegar, garlic, and pepper.",
-    image: "/images/adobong-manok.jpg",
+    image: "/images/chicken/adobong-manok.jpg",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const ulams = [
     sauceType: "Light Soup",
     hasSoup: true,
     description: "Chicken soup with ginger, chayote or papaya, and chili leaves.",
-    image: "/images/tinolang-manok.jpg",
+    image: "/images/chicken/tinolang-manok.jpg",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const ulams = [
     sauceType: "Thick Sauce",
     hasSoup: false,
     description: "Chicken braised in a sweet-savory tomato-based sauce.",
-    image: "/images/asadong-manok.jpg",
+    image: "/images/chicken/asadong-manok.jpg",
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Classic deep-fried chicken, crispy on the outside.",
-    image: "/images/pritong-manok.jpg",
+    image: "/images/chicken/pritong-manok.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ export const ulams = [
     sauceType: "Creamy Sauce",
     hasSoup: false,
     description: "Chicken simmered in a creamy pineapple and coconut milk sauce.",
-    image: "/images/pininyahang-manok.jpg",
+    image: "/images/chicken/pininyahang-manok.png",
   },
 
   // ── Pork ──
@@ -77,7 +77,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Chopped grilled pork sizzled with onions, chili, and calamansi.",
-    image: "/images/pork-sisig.jpg",
+    image: "/images/pork/pork-sisig.jfif",
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Deep-fried pork slices, crispy and simple.",
-    image: "/images/pritong-baboy.jpg",
+    image: "/images/pork/pritong-baboy.jfif",
   },
   {
     id: 9,
@@ -99,7 +99,7 @@ export const ulams = [
     sauceType: "Light Sauce",
     hasSoup: false,
     description: "Ground pork sautéed with potatoes, carrots, and tomato sauce.",
-    image: "/images/giniling-na-baboy.jpg",
+    image: "/images/pork/giniling-na-baboy.jfif",
   },
   {
     id: 10,
@@ -110,7 +110,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Crispy fried pork spring rolls, often served with a dipping sauce.",
-    image: "/images/pork-shanghai.jpg",
+    image: "/images/pork/pork-shanghai.jfif",
   },
   {
     id: 11,
@@ -121,7 +121,7 @@ export const ulams = [
     sauceType: "Thick Sauce",
     hasSoup: false,
     description: "Leftover lechon simmered in a thick liver-based vinegar sauce.",
-    image: "/images/lechong-paksiw.jpg",
+    image: "/images/pork/lechong-paksiw.jpg",
   },
   {
     id: 12,
@@ -132,7 +132,7 @@ export const ulams = [
     sauceType: "Sour Soup",
     hasSoup: true,
     description: "Pork simmered in a sour tamarind broth with vegetables.",
-    image: "/images/sinigang-na-baboy.jpg",
+    image: "/images/pork/sinigang-na-baboy.jpg",
   },
   {
     id: 13,
@@ -143,7 +143,7 @@ export const ulams = [
     sauceType: "Light Soup",
     hasSoup: true,
     description: "Boiled pork soup with cabbage, potatoes, and corn.",
-    image: "/images/nilagang-baboy.jpg",
+    image: "/images/pork/nilagang-baboy.jfif",
   },
   {
     id: 14,
@@ -154,7 +154,7 @@ export const ulams = [
     sauceType: "Thick Sauce",
     hasSoup: false,
     description: "Pork and liver stewed with potatoes and carrots in tomato sauce.",
-    image: "/images/menudo.jpg",
+    image: "/images/pork/menudo.jpg",
   },
   {
     id: 15,
@@ -165,7 +165,7 @@ export const ulams = [
     sauceType: "Creamy Sauce",
     hasSoup: false,
     description: "Pork simmered in coconut milk with chili and shrimp paste.",
-    image: "/images/bicol-express.jpg",
+    image: "/images/pork/bicol-express.jpg",
   },
 
   // ── Fish ──
@@ -178,7 +178,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Whole tilapia deep-fried until crispy.",
-    image: "/images/pritong-tilapia.jpg",
+    image: "/images/fish/pritong-tilapia.jfif",
   },
   {
     id: 17,
@@ -189,7 +189,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Whole tilapia grilled over charcoal, often stuffed with tomato and onion.",
-    image: "/images/inihaw-na-tilapia.jpg",
+    image: "/images/fish/inihaw-na-tilapia.webp",
   },
   {
     id: 18,
@@ -200,7 +200,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Deep-fried milkfish, a breakfast and everyday staple.",
-    image: "/images/pritong-bangus.jpg",
+    image: "/images/fish/pritong-bangus.jfif",
   },
   {
     id: 19,
@@ -211,7 +211,7 @@ export const ulams = [
     sauceType: "Light Soup",
     hasSoup: true,
     description: "Fish gently boiled in a light ginger broth with vegetables.",
-    image: "/images/pesa.jpg",
+    image: "/images/fish/pesa.avif",
   },
   {
     id: 20,
@@ -222,7 +222,7 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Deboned milkfish stuffed with a sautéed vegetable filling, then fried.",
-    image: "/images/pinalamanan-na-bangus.jpg",
+    image: "/images/fish/pinalamanan-na-bangus.jpg",
   },
   {
     id: 21,
@@ -233,7 +233,7 @@ export const ulams = [
     sauceType: "Thick Sauce",
     hasSoup: false,
     description: "Tilapia simmered in vinegar, garlic, and ginger.",
-    image: "/images/tilapiang-paksiw.jpg",
+    image: "/images/fish/tilapiang-paksiw.jpg",
   },
 
   // ── Gulay ──
@@ -246,7 +246,7 @@ export const ulams = [
     sauceType: "Light Soup",
     hasSoup: true,
     description: "A light, comforting vegetable soup, often with corn or malunggay.",
-    image: "/images/suam.jpg",
+    image: "/images/vegetables/suam.jpg",
   },
   {
     id: 23,
@@ -257,7 +257,7 @@ export const ulams = [
     sauceType: "Thick Soup",
     hasSoup: true,
     description: "Mung beans simmered until thick, often with vegetables.",
-    image: "/images/monggo.jpg",
+    image: "/images/vegetables/monggo.avif",
   },
   {
     id: 24,
@@ -268,6 +268,6 @@ export const ulams = [
     sauceType: "Dry / No Sauce",
     hasSoup: false,
     description: "Mixed vegetables sautéed with shrimp paste — eggplant, okra, squash, string beans, bitter melon.",
-    image: "/images/pinakbet.jpg",
+    image: "/images/vegetables/pinakbet.jpg",
   },
 ];
